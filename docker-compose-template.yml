@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  postfix:
+    image: ppizzo/postfix
+    networks:
+      - host
+    environment:
+      - "POSTFIX_DOMAIN="
+      - "POSTFIX_RELAY_HOST="
+      - "POSTFIX_RELAY_PORT="
+      - "POSTFIX_RELAY_USERNAME="
+      - "POSTFIX_RELAY_PASSWORD="
+
+networks:
+  host:
+    name: host
+    external: true
